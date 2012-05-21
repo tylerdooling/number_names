@@ -24,7 +24,7 @@ module NumberNames::NameParser
       tens = "#{NUMBER_NAMES[:tens][num[1]]} #{NUMBER_NAMES[:digits][num[2]]}"
     end
 
-    hundreds.to_s + tens.to_s + get_place(place).to_s
+    hundreds.to_s + tens.to_s + NUMBER_NAMES[:position][place.to_s].to_s
   end
 
   NUMBER_NAMES = {
@@ -59,37 +59,30 @@ module NumberNames::NameParser
       "17" => "seventeen",
       "18" => "eighteen",
       "19" => "nineteen"
+    },
+    :position => {
+      "2" => " thousand",
+      "3" => " million",
+      "4" => " billion",
+      "5" => " trillion",
+      "6" => " quadrillion",
+      "7" => " quintillion",
+      "8" => " sextillion",
+      "9" => " septillion",
+      "10" => " octillion",
+      "11" => " nonillion",
+      "12" => " decillion",
+      "13" => " undecillion",
+      "14" => " duodecillion",
+      "15" => " tredecillion",
+      "16" => " quattuordecillion",
+      "17" => " quindecillion",
+      "18" => " sexdecillion",
+      "19" => " septendecillion",
+      "20" => " octodecillion",
+      "21" => " novemdecillion",
+      "22" => " vigintillion"
     }
   }
-
-
-  def get_place(pos)
-    case pos
-    when 2; " thousand"
-    when 3; " million"
-    when 4; " billion"
-    when 5; " trillion"
-    when 6; " quadrillion"
-    when 7; " quintillion"
-    when 8; " sextillion"
-    when 9; " septillion"
-    when 10; " octillion"
-    when 11; " nonillion"
-    when 12; " decillion"
-    when 13; " undecillion"
-    when 14; " duodecillion"
-    when 15; " tredecillion"
-    when 16; " quattuordecillion"
-    when 17; " quindecillion"
-    when 18; " sexdecillion"
-    when 19; " septendecillion"
-    when 20; " octodecillion"
-    when 21; " novemdecillion"
-    when 22; " vigintillion"
-    end
-  end
-
-
-
 
 end
